@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.title-link {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  width: 430px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.price-input {
+  margin: 0 10px 10px 0;
+}
