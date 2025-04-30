@@ -7,16 +7,17 @@ const container = document.createElement("div");
 container.className = "container";
 
 const sumPriceContainer = document.createElement("div");
-sumPriceContainer.className = "sumPriceContainer";
+sumPriceContainer.className = "sum-price-container";
 sumPriceContainer.textContent = sum;
 
 const messageContainer = document.createElement("div");
+messageContainer.className = "message-container";
 
 const paramsContainer = document.createElement("div");
-paramsContainer.className = "paramsContainer";
+paramsContainer.className = "params-container";
 
 const itemContainer = document.createElement("div");
-itemContainer.className = "itemContainer";
+itemContainer.className = "item-container";
 
 const itemList = document.createElement("ul");
 itemList.className = "itemList";
@@ -35,6 +36,7 @@ const dressCategory = document.createElement("input");
 dressCategory.type = "checkbox";
 
 const filterPriceForm = document.createElement("form");
+filterPriceForm.className = "filter-price-form";
 const minPrice = document.createElement("input");
 minPrice.type = "number";
 minPrice.id = "minPrice";
@@ -47,8 +49,10 @@ maxPrice.id = "maxPrice";
 maxPrice.placeholder = "max price";
 maxPrice.className = "price-input";
 
-const filterPrice = document.createElement("input");
-filterPrice.type = "submit";
+const filterPriceBtn = document.createElement("button");
+filterPriceBtn.type = "submit";
+filterPriceBtn.className = "filter-price-btn";
+filterPriceBtn.textContent = "Фильтровать";
 
 const updateProducts = products.map((item) => ({
   ...item,
@@ -114,7 +118,7 @@ function filterProducts(event) {
   sumPriceContainer.textContent = `Сумма: ${(sum += sumPrice)} 💰`;
 }
 
-filterPrice.addEventListener("click", filterProducts);
+filterPriceBtn.addEventListener("click", filterProducts);
 electronicCategory.addEventListener("change", filterProducts);
 dressCategory.addEventListener("change", filterProducts);
 
@@ -145,4 +149,4 @@ itemContainer.append(itemList);
 labelElectronic.append(electronicCategory);
 labelDress.append(dressCategory);
 paramsContainer.append(filterPriceForm, labelElectronic, labelDress);
-filterPriceForm.append(minPrice, maxPrice, filterPrice);
+filterPriceForm.append(minPrice, maxPrice, filterPriceBtn);
